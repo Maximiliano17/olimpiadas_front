@@ -1,0 +1,13 @@
+#container {
+    width: 100%;
+    height: calc(100vh - 5rem);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+ 
+#box { 
+    width: 400px;
+    height: 400px;
+    background-color: red;
+}

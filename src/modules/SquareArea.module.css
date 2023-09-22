@@ -1,0 +1,68 @@
+.area {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+    border: solid 1px #ccc;
+    box-shadow: 1px 1px 4px 4px #ccc;
+    border-radius: 10px;
+    padding: 16px;
+    text-align: center;
+    position: relative;
+}
+
+.area:hover {
+    border: solid 1px green;
+    box-shadow: none;
+}
+
+.area .icon {
+    width: 100px;
+}
+
+.area button {
+    width: 95px;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border-style: none;
+    background: #8B0000;
+    border-radius: 100px;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+.area .delete {
+    width: initial;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.alarm {
+    background-color: orange;
+}
+
+.icon_alarm {
+    animation: moveAlarm 1s ease-in-out infinite alternate;
+}
+
+@keyframes moveAlarm {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+
+    100% {
+        transform: translateY(5px);
+    }
+}

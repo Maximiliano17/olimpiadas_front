@@ -1,0 +1,55 @@
+.cama {
+    width: 220px;
+    height: 400px;
+    background: white;
+    background-color: #ade3ff;
+    border: solid 1px #ccc;
+    box-shadow: 1px 1px 4px 4px #ccc;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+}
+
+.top {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.top .alm {
+    display: grid;
+    place-items: center;
+    width: 90%;
+    height: 90%;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.9);
+}
+
+.body {
+    width: 100%;
+    height: 80%;
+    background-color: #ade3ff;
+}
+
+.body .info {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    padding-left: 10px;
+}
+
+.body .bodyTop {
+    width: 100%;
+    margin-top: -.6rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    height: 20%;
+    background-color: white;
+}

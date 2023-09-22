@@ -1,0 +1,294 @@
+ /*Styles Por Defecto*/
+ * {
+     padding: 0px;
+     margin: 0px;
+     box-sizing: border-box;
+ }
+
+ /*Styles De Contenedores*/
+ .container {
+     width: 100%;
+     height: calc(100vh - 5rem);
+     display: flex;
+     justify-content: space-around;
+     align-items: center;
+     background: white;
+ }
+
+ /*Areas*/
+ .formularioareas {
+     width: 320px;
+     height: 520px;
+     display: flex;
+     justify-content: space-around;
+     align-items: center;
+     flex-direction: column;
+     background: white;
+     border: solid 1px #6a5f5f;
+     border-radius: 15px;
+     box-shadow: 0px 0px 10px 2px #ccc;
+ }
+
+.buttonarea{
+    display: none;
+}
+
+ .formularioareas input {
+     width: 70%;
+     padding-left: 10px;
+     height: 2rem;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     background: white;
+     border-radius: 10px;
+     border-style: none;
+     border-bottom: solid 1px #ccc;
+ }
+
+ .formularioareas button {
+     cursor: pointer;
+     width: 70%;
+     height: 2rem;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     color: white;
+     background: #FF0000;
+     border-style: none;
+     border-radius: 100px;
+     font-size: 20px;
+     text-decoration: none;
+ }
+
+ .formularioareas span {
+     font-size: 15px;
+ }
+
+ .chex {
+     width: 100%;
+     height: 10%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     gap: 1rem;
+     font-size: 12px;
+ }
+
+ .chex input {
+     width: 20px;
+     height: 20px;
+ }
+
+ .areas {
+     width: calc(100% - 500px);
+     height: 100%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ }
+
+ /*Buscador*/
+
+.buscador_monitoreo{
+    width: 90%;
+    height: 10%;
+    background: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.buscador_monitoreo input{
+    width: 60%;
+    height: 2rem;   
+    border-style: none;
+    border-bottom: solid 1px #ccc;
+    outline: none;
+}
+
+.buscador_monitoreo select{
+    cursor: pointer;
+    background: white;
+    border-style: none;
+    border-bottom: solid 1px #ccc;
+    border-radius: 100px;
+    text-decoration: none;
+    outline: none;
+}
+
+ /*Monitoreo*/
+
+ .monitoreo {
+     width: 100%;
+     height: calc(100vh - 5rem);
+     display: flex;
+     justify-content: space-around;
+     align-items: center;
+     flex-direction: column;
+     background: linear-gradient(to bottom, #FF0000, #8B0000);
+ }
+
+ .verareas {
+     width: 90%; 
+     height: 90%;
+     display: grid;
+     grid-template-columns: repeat(5, 200px);
+     grid-template-rows: 200px 200px;
+     grid-gap: 16px;
+     justify-content: center;
+     align-items: center;
+     background: white;
+     padding: 16px;
+     overflow-y: auto;
+     overflow-x: hidden;
+ }
+
+ .verareas_container{
+    width: 70%;
+    height: 90%;
+    display: flex   ;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    padding: 16px;
+    overflow-y: auto;
+    overflow-x: hidden;
+ }
+
+ .verareas_v2 {
+     width: 100%;
+     height: 85%;
+     display: grid;
+     grid-template-columns: repeat(4, 200px);
+     grid-template-rows: 200px 200px;
+     grid-gap: 16px;
+     justify-content: center;
+     align-items: center;
+     padding: 16px;
+     overflow-y: auto;
+     overflow-x: hidden;
+ }
+
+ @media(max-width: 1220px) {
+     .verareas {
+         display: grid;
+         grid-template-columns: repeat(3, 200px);
+         grid-template-rows: 200px 200px;
+         grid-gap: 16px;
+         overflow-y: auto;
+     }
+     .verareas_v2 {
+        display: grid;
+        grid-template-columns: repeat(3, 200px);
+        grid-template-rows: 200px 200px;
+        grid-gap: 16px;
+        overflow-y: auto;
+    }
+ }
+
+ @media(max-width: 1050px) {
+    .verareas_v2 {
+        height: 90%;
+        overflow-y: auto;
+        display: grid;
+        grid-template-columns: repeat(2, 200px);
+        grid-template-rows: 200px 200px;
+        grid-gap: 16px;
+        padding-bottom: 20px;
+    }
+}
+
+ @media(max-width: 800px) {
+     .verareas {
+         height: 90%;
+         overflow-y: auto;
+         display: grid;
+         grid-template-columns: repeat(2, 200px);
+         grid-template-rows: 200px 200px;
+         grid-gap: 16px;
+     }
+     .verareas_v2 {
+        height: 90%;
+        overflow-y: auto;
+        display: grid;
+        grid-template-columns: repeat(1, 300px);
+        grid-template-rows: 200px 200px; 
+        grid-gap: 16px;
+        place-items: center;
+    }
+     .buscador_monitoreo select{
+        width: 10%;
+     }
+ }
+
+ @media(max-width: 720px){
+       .container{
+        flex-direction: column;
+        overflow-y: scroll;
+       }
+       .verareas_container {
+        width: 90%;
+        height: 50%;
+        overflow-y: auto;
+        place-items: center;
+    }
+    .verareas_v2{
+        width: 90%;
+        height: 90%;
+        overflow-y: auto;
+        display: grid;
+        grid-template-columns: repeat(1, 300px);
+        grid-template-rows: 200px 200px;
+        grid-gap: 16px;
+        justify-content: center;
+        align-items: center;
+        place-items: center;
+    }
+    .formularioareas{
+        width: 90%;
+        height: 40%;   
+        font-size: 15px; 
+    }
+    .formularioareas input {
+        width: 70%;
+        padding-left: 10px;
+        height: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: white;
+        border-radius: 10px;
+        border-style: none;
+        border-bottom: solid 1px #ccc;
+    }
+   
+    .formularioareas button {
+        cursor: pointer;
+        width: 30%;
+        height: fit-content;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        background: #FF0000;
+        border-style: none;
+        border-radius: 100px;
+        font-size: 15px;
+        text-decoration: none;
+    }
+ }
+
+ @media(max-width: 515px) {
+     .verareas {
+         height: 90%;
+         overflow-y: auto;
+         display: grid;
+         grid-template-columns: repeat(1, 300px);
+         grid-template-rows: 200px 200px;
+         grid-gap: 16px;
+         justify-content: center;
+         align-items: center;
+         place-items: center;
+     } 
+ }

@@ -1,0 +1,282 @@
+/*Styles Por Defecto*/
+*{ 
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;  
+}
+/*Styles De Contenedores*/
+.container{
+    width: 100%;
+    height: calc(100vh - 5rem); 
+    display: flex; 
+    justify-content: space-around;
+    align-items: center;  
+    background:white;
+}
+/*Styles Header*/
+.header{
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background:white;
+    border-bottom:solid 1px #ccc;
+} 
+
+.logo{
+    width: 25%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo img{
+    width: fit-content;
+    height: 100%;
+    object-fit: cover;
+}
+
+.botonvolver{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.volverlink{    
+    width: 50%;
+    height: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #FF0000;
+    border-radius: 10px;
+    color:white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.burger{
+    display: none;
+}
+
+/*Nav*/
+.nav{
+   width: 55%;
+   height: 100%;
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+}
+
+.nav_item{
+   color:black;
+   text-decoration: none;
+   font-size: 20px;
+}   
+
+.nav_item:hover{
+    border-bottom: solid 1px #FF0000;
+}
+
+.crearareas{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+.crearpersonas{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+/*Tarjetas*/
+.tarjeta{
+    width: 500px;
+    height: 230px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    border:solid 1px #ccc;
+    box-shadow: 1px 1px 4px 4px #ccc;
+}
+
+.tarjeta:hover{
+    border:solid 1px green;
+    box-shadow: none;
+}
+
+.tarjeta img{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    object-fit: cover;
+}
+
+.tarjetainfo{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+    gap:1.5rem;
+}
+
+.tarjetainfo span{
+    width: 80%;
+    font-size: 15px;
+    text-align: center;
+    color: #6a5f5f;
+}
+
+.tarjetainfo p{
+    width: 100%;
+    font-size: 20px;
+    text-align: center;
+    color:black;
+}
+
+.item{
+    width: 100px;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white; 
+    border-style: none;
+    background: #8B0000;
+    border-radius: 100px;
+    font-size: 15px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/*Responcive*/
+
+@media(max-width: 1330px){
+    .tarjeta{
+        width: 300px;
+        height: 40%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    
+    .nav{
+        width: 75%; 
+    }
+
+    .botonvolver{
+        display: none;
+    } 
+}
+
+@media(max-width: 720px){
+    .nav{
+        display: none;
+    }
+
+    .container{
+        width: 100%;
+        height: fit-content;
+        background: linear-gradient(to bottom, #FF0000, #8B0000);
+        flex-direction: column;
+    }
+
+    .tarjeta{
+        width: 70%;
+        height: 400px;
+        margin: 50px;
+    }
+
+    .burger{
+        width: 20%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .burger button{
+         width: 70%;
+         height: 70%; 
+         border-style: none; 
+         background: white;
+         cursor: pointer;
+    }
+    
+    .modal{
+        width: 90%;
+        height: 90%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+        background: white;
+        background: white; 
+        background-color:white;
+        border:solid 1px #ccc;
+        box-shadow: 1px 1px 4px 4px #ccc;
+        position: absolute;
+    }
+
+            
+        .modalcontiner{
+            width: 100%;
+            height: 90%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+     
+        .nav_item{
+            width: 100%;
+            height: 10%;
+            padding-left: 20px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background: white;
+        }
+
+        .barrasuperior{
+            width: 100%;
+            height: 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: solid 1px #ccc;
+        }
+
+        .barrasuperior p{
+            padding-left: 20px;
+        }
+
+        .botonmodal{
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: none;
+            border-style: none;
+            cursor: pointer;
+        }
+
+}

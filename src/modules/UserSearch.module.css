@@ -1,0 +1,45 @@
+.userItem {
+    height: 58px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-left: 20px;
+    transition: .3s ease;
+    cursor: pointer;
+}
+
+.savedUser {
+    width: 100%;
+    background-color: #111d2f;
+    border: 2px solid #204881;
+    border-radius: 10px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-left: 20px;
+    transition: .3s ease;
+    position: relative;
+}
+
+.userItem:hover {
+    transition: .3s ease;
+    background-color: #1f6feb;
+}
+
+.userInfo>p:nth-child(1) {
+    /* display: ; */
+    font-size: 14px;
+}
+
+.userInfo>p:nth-child(2) {
+    color: #6e7681;
+    font-size: 13px;
+}
+
+.closeModal {
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+    margin-right: 1rem;
+}

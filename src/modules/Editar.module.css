@@ -1,0 +1,67 @@
+/*Styles Por Defecto*/
+*{ 
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;  
+}
+/*Styles De Contenedores*/
+.container{
+    width: 100%;
+    height: calc(100vh - 5rem); 
+    display: flex; 
+    justify-content: space-around;
+    align-items: center;  
+    background: linear-gradient(to bottom, #FF0000, #8B0000);
+}
+/*Formulario de editar*/
+.formEditar{
+    width: 350px;
+    height: 92%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    background: white;
+    border: solid 1px #6a5f5f;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px 2px white;
+}
+
+.formEditar input {
+    width: 80%;
+    padding-left: 10px;
+    height: 2.5rem;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    background: white;
+    border-radius: 10px;
+    border-style: none;
+    border-bottom: solid 1px #ccc;
+    outline: none;
+}
+  
+.formEditar label{
+    width: 85%;
+    color: #6a5f5f;
+    text-align: center;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.formEditar button{
+    cursor: pointer;
+    width: 70%;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background: #FF0000;
+    border-style: none;
+    border-radius: 100px;
+    font-size: 20px;
+    text-decoration: none;
+}
