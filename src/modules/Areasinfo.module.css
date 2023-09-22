@@ -59,7 +59,9 @@
 
 
 .addboton {
-    width: 100px;
+    width: fit-content;
+    padding-left: 10px;
+    padding-right: 10px;
     height: 2rem;
     display: flex;
     justify-content: center;
@@ -124,7 +126,9 @@
     background: white;
     overflow-y: auto;
     display: grid;
-    grid-template-columns: repeat(3, 300px);
+    /* grid-template-columns: repeat(3, 300px); */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    place-items: center;
     grid-template-rows: 400px 400px 400px 400px;
     padding: 20px;
     grid-gap: 16px;

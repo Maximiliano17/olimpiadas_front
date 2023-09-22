@@ -5,8 +5,9 @@ function Bed({ fullname, dni, gender, phone, onClick, edit }) {
     <article className={styles.cama}>
       {edit ? (
         <img
-          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAA4klEQVRIS2NkoDFgpLH5DKMWEAzhgQ2i89LSCYZPny7A5czzCgoCDL9+ORg+e7YBlxqcPgAZDpScD9R4weDpU0N0A0CGM/7+vR8obvD///9AXJbgtgDJAHRLkA0Hyf1nZXU0fPDgAzZf4I0DdINAPiHFcJCFBCMZ3UCoKw0IuRzmG4IWgBSiWQISwhssyEFFtgXYIp7kOMDi+gvIQUSMJSRFMii1gCMOmjxxJWGigghfasGWuijKaNjSOcUZDRz+0tIFDKysC3BlIoqKCoLFJJEKiEqmRJqFVdmoBQRDj+ZBBADJOpMZVW1QPAAAAABJRU5ErkJggg=="
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAABc0lEQVRYR+2WzY3CMBCFPR1wJkikg8UdsB1sCZQAFcBWwNIBJdAB20EogQNBHLlHyIwRWUVWknl2cshK9iUH/8znN8+TITWwQQPjURFIykhUKCokKSDN/28PZZPJXF8uv9Ity/ksTUeqKFKd5yd0D6xQliRLXrw2xuz09bqRAlgYKootr1sYok/0IhAQwyx4oT18ZEEY6rsNqgpTghulNKIUBGQPPSXJkT/zvwANUHUwHOTnI89Xkqp2HgZCoLrCeAO1QfUBEwTUBEVEU2vgMi0+aaqm0itl1Y2up5xDYc+4vgoGqlPqLXkwTHDK7MY6zyAlQXppQQo1wUglQYIJUqjpNXHhmyF1SoLyUkh62mjxbIOCgSSYMkhXKAgIhekDCgPitoOMsf+y10CKnqPU3TweWt9u59489G4/tgiMo9SMDb/iP/1egvF+Zb4N2qtejcdf3KocEBhvIPTQLusgD3UJ4Ls3AkmKRYWiQpIC0vzgPPQEgpzaJU4QPjYAAAAASUVORK5CYII="
           onClick={() => onClick()}
+          className={styles.delete}
         />
       ) : null}
 

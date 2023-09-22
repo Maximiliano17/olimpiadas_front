@@ -10,7 +10,7 @@ import styles from "../modules/Areas.module.css";
 // import icono from  "../assets/imagenes/iconos/icon_doctor.png"
 
 function Monitoreo() {
-  const socket = io("localhost:4000/");
+  const socket = io("https://olimpiadas-informatica-production.up.railway.app");
 
   const [areas, setAreas] = useState([]);
 

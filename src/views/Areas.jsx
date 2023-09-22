@@ -2,17 +2,19 @@ import { useState, useEffect } from "react";
 import Header from "../components/Header";
 import styles from "../modules/Areas.module.css";
 import { areaApi } from "../api/area.api";
+import io from "socket.io-client";
 import { ToastContainer, toast } from "react-toastify";
 import SquareArea from "../components/SquareArea";
 
 function Areas() {
+  const socket = io("localhost:4000/");
   const [areas, setAreas] = useState([]);
   const [name, setName] = useState("");
   const [beds, setBeds] = useState(0);
   const [schedule, setSchedule] = useState("");
   const [level, setLevel] = useState("");
 
-  useEffect(() => {
+  const getAreas = () => {
     areaApi
       .get("/")
       .then((res) => {
@@ -21,6 +23,13 @@ function Areas() {
       .catch((err) => {
         console.log(err);
       });
+  };
+
+  useEffect(() => {
+    getAreas();
+    socket.on("server:reloadAlarm", () => {
+      getAreas();
+    });
   }, []);
 
   const handleSubmit = (e) => {
@@ -93,7 +102,7 @@ function Areas() {
   return (
     <>
       <Header />
-      
+
       <div className={styles.container}>
         <form className={styles.formularioareas} onSubmit={handleSubmit}>
           <span>Nombre del área.</span>
@@ -151,12 +160,17 @@ function Areas() {
           </div>
           <button type="submit">Crear</button>
         </form>
-        
+
         <section className={styles.verareas_container}>
-        <div className={styles.buscador_monitoreo}>
-            <input type="text" name="buscador" id="buscador" placeholder="Buscar area" />
+          <div className={styles.buscador_monitoreo}>
+            <input
+              type="text"
+              name="buscador"
+              id="buscador"
+              placeholder="Buscar area"
+            />
             <select>
-            <option value="" selected>
+              <option value="" selected>
                 📁 Filtro
               </option>
               <option value="cirugia">Cirugía</option>
@@ -176,17 +190,18 @@ function Areas() {
               <option value="oncologia">Oncología</option>
             </select>
           </div>
-        <section className={styles.verareas_v2}>
-        {areas.map((area, index) => (
-            <SquareArea
-              name={area.name}
-              key={index}
-              id={area._id}
-              edit={true}
-              onClick={() => handleDelete(area._id)}
-            />
-          ))}
-        </section>
+          <section className={styles.verareas_v2}>
+            {areas.map((area, index) => (
+              <SquareArea
+                name={area.name}
+                key={index}
+                id={area._id}
+                alarm={area.alarm}
+                edit={true}
+                onClick={() => handleDelete(area._id)}
+              />
+            ))}
+          </section>
         </section>
         <ToastContainer />
       </div>

@@ -446,13 +446,17 @@ function AreaInfo() {
           </div>
           <div className={styles.cardasignar}>
             <section className={styles.addpersonal}>
-              <span>Personal Asignado</span>
-
               <p
                 className={styles.addboton}
                 onClick={() => setIsOpen(!modalIsOpen)}
               >
-                Agregar
+                Agregar Personal
+              </p>
+              <p
+                className={styles.addboton}
+                onClick={() => setIsOpen2(!modalIsOpen2)}
+              >
+                Agregar Paciente
               </p>
             </section>
             <div className={styles.personal}>
@@ -469,9 +473,7 @@ function AreaInfo() {
             </div>
           </div>
         </section>
-        <button onClick={() => setIsOpen2(!modalIsOpen2)}>
-          asignar paciente
-        </button>
+
         <div className={styles.mostrarcamas}>
           {listOfPatients
             ? listOfPatients.map((element, index) => {

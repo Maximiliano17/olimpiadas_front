@@ -1,12 +1,12 @@
 //Components
 import Login from "./components/Login";
-import { UserProvider } from "./contexts/userContext";
+import { AlarmProvider } from "./contexts/AlarmContext";
 
 function App() {
   return (
-    <UserProvider>
+    <AlarmProvider>
       <Login />
-    </UserProvider>
+    </AlarmProvider>
   );
 }
 

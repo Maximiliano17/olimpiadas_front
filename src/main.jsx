@@ -13,45 +13,82 @@ import Monitoreo from "./views/Monitoreo.jsx";
 import AreaEdit from "./components/AreaInfo.jsx";
 import AreaInfo from "./components/areaInfoMonitor.jsx";
 import Editar from "./components/Editar.jsx";
+import { AlarmProvider } from "./contexts/AlarmContext.jsx";
 
 // Routes
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: (
+      <AlarmProvider>
+        <App />
+      </AlarmProvider>
+    ),
   },
   {
     path: "/register-personal",
-    element: <Register />,
+    element: (
+      <AlarmProvider>
+        <Register />
+      </AlarmProvider>
+    ),
   },
   {
     path: "/Home",
-    element: <Home />,
+    element: (
+      <AlarmProvider>
+        <Home />
+      </AlarmProvider>
+    ),
   },
   //Rutas Tarjetas
   {
     path: "/Areas",
-    element: <Areas />,
+    element: (
+      <AlarmProvider>
+        <Areas />
+      </AlarmProvider>
+    ),
   },
   {
     path: "/area-edit/:id",
-    element: <AreaEdit />,
+    element: (
+      <AlarmProvider>
+        <AreaEdit />
+      </AlarmProvider>
+    ),
   },
   {
     path: "/area-info/:id",
-    element: <AreaInfo />,
+    element: (
+      <AlarmProvider>
+        <AreaInfo />
+      </AlarmProvider>
+    ),
   },
   {
     path: "/Monitoreo",
-    element: <Monitoreo />,
+    element: (
+      <AlarmProvider>
+        <Monitoreo />
+      </AlarmProvider>
+    ),
   },
   {
     path: "/Personal",
-    element: <Personal />,
+    element: (
+      <AlarmProvider>
+        <Personal />
+      </AlarmProvider>
+    ),
   },
   {
     path: "/Patients",
-    element: <Pacientes />,
+    element: (
+      <AlarmProvider>
+        <Pacientes />
+      </AlarmProvider>
+    ),
   },
   {
     path: "/Editar",

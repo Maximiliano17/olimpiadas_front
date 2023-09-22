@@ -1,7 +1,7 @@
 import icono from "../assets/imagenes/iconos/icon_doctor.png";
 import styles from "../modules/SquareArea.module.css";
 
-function SquareArea({ name, alarm = true, id, onClick, edit }) {
+function SquareArea({ name, alarm, id, onClick, edit }) {
   const getInfo = (isEdit) => {
     if (isEdit) {
       window.location.href = `/area-edit/${id}`;
@@ -10,15 +10,8 @@ function SquareArea({ name, alarm = true, id, onClick, edit }) {
     }
   };
 
-  if (alarm) {
-    console.log("alertaaaaaa");
-    const audio = new Audio("../../public/Alarm sound effect￼.mp4");
-    audio.addEventListener("ended", () => {
-      audio.currentTime = 0; // Reiniciar la reproducción
-      audio.play();
-    });
-    audio.play();
-  }
+  
+  
 
   return (
     <article className={`${styles.area} ${alarm ? styles.alarm : ""}`}>

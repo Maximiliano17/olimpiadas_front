@@ -53,3 +53,15 @@
     height: 20%;
     background-color: white;
 }
+
+.delete {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-top: -1rem;
+    margin-right: -1rem;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 50%;
+    cursor: pointer;
+}
