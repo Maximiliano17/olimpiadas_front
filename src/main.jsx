@@ -13,6 +13,8 @@ import Monitoreo from "./views/Monitoreo.jsx";
 import AreaEdit from "./components/AreaInfo.jsx";
 import AreaInfo from "./components/areaInfoMonitor.jsx";
 import Editar from "./components/Editar.jsx";
+import EditarPatient from "./components/EditarPatient.jsx";
+import EditarArea from "./components/EditarArea.jsx";
 import { AlarmProvider } from "./contexts/AlarmContext.jsx";
 
 // Routes
@@ -91,8 +93,16 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/Editar",
+    path: "/Editar/:id",
     element: <Editar />,
+  },
+  {
+    path: "/Editar-paciente/:id",
+    element: <EditarPatient />,
+  },
+  {
+    path: "/Editar-area/:id",
+    element: <EditarArea />,
   },
 ]);
 

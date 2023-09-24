@@ -22,7 +22,7 @@ export const AlarmProvider = ({ children }) => {
 
   useEffect(() => {
     const socket = io(
-      "https://olimpiadas-informatica-production.up.railway.app"
+      "http://localhost:4000/"
     );
 
     // Escuchar el evento 'onLoadAlarm' del WebSocket

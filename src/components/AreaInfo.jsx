@@ -10,6 +10,7 @@ import Modal from "react-modal";
 import styles from "../modules/Areasinfo.module.css";
 //Components
 import Header from "../components/Header";
+import { Link } from "react-router-dom";
 import UserSearch from "./UserSearch";
 import Bed from "./Bed";
 
@@ -30,6 +31,7 @@ function AreaInfo() {
   const [modalIsOpen2, setIsOpen2] = useState(false);
   const [search, setSearch] = useState("");
   const [searchPatient, setSearchPatient] = useState("");
+  const [level, setLevel] = useState("");
   const { id } = useParams();
 
   const afterOpenModal = () => {
@@ -158,6 +160,11 @@ function AreaInfo() {
       .get(`/${id}`)
       .then((res) => {
         setAreaInfo(res.data.findArea);
+
+        if (res.data.findArea.level == "low") setLevel("bajo");
+        if (res.data.findArea.level == "normal") setLevel("normal");
+        if (res.data.findArea.level == "high") setLevel("urgente");
+
         setLoading(true);
 
         const obj = [];
@@ -440,9 +447,14 @@ function AreaInfo() {
         <section className={styles.cardtotal}>
           <div className={styles.cardinfoarea}>
             <p>Nombre: {areaInfo.name}</p>
-            <p>Camas Disponibles: {areaInfo.beds}</p>
+            <p>Camas Totales: {areaInfo.beds}</p>
+            <p>Camas Ocupadas: {listOfPatients.length}</p>
+            <p>Camas Disponibles: {areaInfo.beds - listOfPatients.length}</p>
             <p>Horario De atencion: {areaInfo.schedule} 24hs</p>
-            <p>prioridad: {areaInfo.level}</p>
+            <p>prioridad: {level}</p>
+            <Link to="/Editar-area/123" className={styles.addboton}>
+              Editar Area
+            </Link>
           </div>
           <div className={styles.cardasignar}>
             <section className={styles.addpersonal}>
@@ -493,6 +505,7 @@ function AreaInfo() {
           {components}
         </div>
       </div>
+
       <ToastContainer />
     </>
   );

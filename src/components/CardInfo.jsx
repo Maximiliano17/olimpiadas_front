@@ -3,10 +3,11 @@ import styles from "../modules/CardInfo.module.css";
 //Api
 import { authApi } from "../api/auth.api";
 //React
+import { useState, useEffect } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import { Link } from "react-router-dom";
 
-function CardInfo({   
+function CardInfo({
   username,
   fullname,
   gender,
@@ -17,6 +18,17 @@ function CardInfo({
   role,
   id,
 }) {
+  const [translateRole, setTranslateRole] = useState("");
+  const [translateGender, setTranslateGender] = useState("");
+
+  useEffect(() => {
+    if (role == "user") setTranslateRole("generico");
+    if (role == "admin") setTranslateRole("administrador");
+
+    if (gender == "male") setTranslateGender("hombre");
+    if (gender == "female") setTranslateGender("mujer");
+    if (gender == "other") setTranslateGender("otro");
+  }, []);
 
   const deleteUser = () => {
     authApi
@@ -49,7 +61,7 @@ function CardInfo({
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
-      draggable: true, 
+      draggable: true,
       progress: undefined,
       theme: "dark",
     });
@@ -70,27 +82,27 @@ function CardInfo({
           </svg>
           <div className={styles.infosvg}>
             <p>Usuario: {username}</p>
-            <p>Rol: {role}</p>
+            <p>Rol: {translateRole}</p>
           </div>
         </div>
         <div className={styles.info}>
           <p>Nombre: {fullname}</p>
-          <p>Genero: {gender}</p>
+          <p>Genero: {translateGender}</p>
           <p>Edad: {age}</p>
           <p>Especialidad: {specialization}</p>
           <p>Areas: Urgencias</p>
           <p>Telefono: {phone}</p>
         </div>
         <div className={styles.boton}>
-             <Link to={`/Editar`} className={styles.item}>
-                Editar
-              </Link>
+          <Link to={`/Editar/${id}`} className={styles.item}>
+            Editar
+          </Link>
           <button onClick={() => deleteUser()}>Borrar</button>
         </div>
       </div>
-      <ToastContainer /> 
-    </> 
-  ); 
+      <ToastContainer />
+    </>
+  );
 }
 
 export default CardInfo;

@@ -7,9 +7,12 @@ import { ToastContainer, toast } from "react-toastify";
 import SquareArea from "../components/SquareArea";
 
 function Areas() {
-  const socket = io("localhost:4000/");
+  const socket = io("http://localhost:4000/");
   const [areas, setAreas] = useState([]);
+  const [filtered, setFiltered] = useState([]);
   const [name, setName] = useState("");
+  const [search, setSearch] = useState("");
+  const [filter, setFilter] = useState("");
   const [beds, setBeds] = useState(0);
   const [schedule, setSchedule] = useState("");
   const [level, setLevel] = useState("");
@@ -19,6 +22,7 @@ function Areas() {
       .get("/")
       .then((res) => {
         setAreas(res.data.findAreas);
+        setFiltered(res.data.findAreas);
       })
       .catch((err) => {
         console.log(err);
@@ -31,6 +35,20 @@ function Areas() {
       getAreas();
     });
   }, []);
+
+  useEffect(() => {
+    const filteredAreas = areas.filter((area) => {
+      const hasSelectedLevel = filter === "" || area.level === filter;
+
+      const matchesSearch = area.name
+        .toLowerCase()
+        .includes(search.toLowerCase());
+
+      return hasSelectedLevel && matchesSearch;
+    });
+
+    setFiltered(filteredAreas);
+  }, [filter, search]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -168,30 +186,20 @@ function Areas() {
               name="buscador"
               id="buscador"
               placeholder="Buscar area"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
             />
-            <select>
+            <select onChange={(e) => setFilter(e.target.value)}>
               <option value="" selected>
                 📁 Filtro
               </option>
-              <option value="cirugia">Cirugía</option>
-              <option value="pediatria">Pediatría</option>
-              <option value="ginecologia">Ginecología</option>
-              <option value="obstetricia">Obstetricia</option>
-              <option value="cardiologia">Cardiología</option>
-              <option value="neurologia">Neurología</option>
-              <option value="oftalmologia">Oftalmología</option>
-              <option value="dermatologia">Dermatología</option>
-              <option value="otorrinolaringologia">Otorrinolaringología</option>
-              <option value="ortopedia">Ortopedia</option>
-              <option value="psiquiatria">Psiquiatría</option>
-              <option value="anestesiologia">Anestesiología</option>
-              <option value="radiologia">Radiología</option>
-              <option value="urologia">Urología</option>
-              <option value="oncologia">Oncología</option>
+              <option value="low">bajo</option>
+              <option value="normal">normal</option>
+              <option value="high">urgente</option>
             </select>
           </div>
           <section className={styles.verareas_v2}>
-            {areas.map((area, index) => (
+            {filtered.map((area, index) => (
               <SquareArea
                 name={area.name}
                 key={index}

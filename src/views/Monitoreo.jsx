@@ -10,9 +10,12 @@ import styles from "../modules/Areas.module.css";
 // import icono from  "../assets/imagenes/iconos/icon_doctor.png"
 
 function Monitoreo() {
-  const socket = io("https://olimpiadas-informatica-production.up.railway.app");
+  const socket = io("http://localhost:4000/");
 
   const [areas, setAreas] = useState([]);
+  const [search, setSearch] = useState("");
+  const [filtered, setFiltered] = useState([]);
+  const [filter, setFilter] = useState("");
 
   const handleAlarm = () => {
     const id = "6507725d1d729e8fdf2b24f6";
@@ -31,11 +34,26 @@ function Monitoreo() {
       .get("/")
       .then((res) => {
         setAreas(res.data.findAreas);
+        setFiltered(res.data.findAreas);
       })
       .catch((err) => {
         console.log(err);
       });
   };
+
+  useEffect(() => {
+    const filteredAreas = areas.filter((area) => {
+      const hasSelectedLevel = filter === "" || area.level === filter;
+
+      const matchesSearch = area.name
+        .toLowerCase()
+        .includes(search.toLowerCase());
+
+      return hasSelectedLevel && matchesSearch;
+    });
+
+    setFiltered(filteredAreas);
+  }, [filter, search]);
 
   useEffect(() => {
     getAreas();
@@ -54,31 +72,21 @@ function Monitoreo() {
             type="text"
             name="buscador"
             id="buscador"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
             placeholder="Buscar area"
           />
-          <select>
+          <select onChange={(e) => setFilter(e.target.value)}>
             <option value="" selected>
               📁 Filtro
             </option>
-            <option value="cirugia">Cirugía</option>
-            <option value="pediatria">Pediatría</option>
-            <option value="ginecologia">Ginecología</option>
-            <option value="obstetricia">Obstetricia</option>
-            <option value="cardiologia">Cardiología</option>
-            <option value="neurologia">Neurología</option>
-            <option value="oftalmologia">Oftalmología</option>
-            <option value="dermatologia">Dermatología</option>
-            <option value="otorrinolaringologia">Otorrinolaringología</option>
-            <option value="ortopedia">Ortopedia</option>
-            <option value="psiquiatria">Psiquiatría</option>
-            <option value="anestesiologia">Anestesiología</option>
-            <option value="radiologia">Radiología</option>
-            <option value="urologia">Urología</option>
-            <option value="oncologia">Oncología</option>
+            <option value="low">bajo</option>
+            <option value="normal">normal</option>
+            <option value="high">urgente</option>
           </select>
         </div>
         <section className={styles.verareas}>
-          {areas.map((area, index) => (
+          {filtered.map((area, index) => (
             <SquareArea
               name={area.name}
               alarm={area.alarm}

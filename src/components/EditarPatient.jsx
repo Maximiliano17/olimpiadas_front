@@ -3,40 +3,32 @@ import Header from "./Header";
 //Styles
 import styles from "../modules/Editar.module.css";
 import { useState } from "react";
-import { authApi } from "../api/auth.api";
-import { ToastContainer, toast } from "react-toastify";
+import { patientApi } from "../api/patient.api";
 import { useParams } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
 
-function Editar() {
+function EditarPatient() {
   const [fullname, setFullname] = useState("");
-  const [specialization, setSpecialization] = useState("");
   const [phone, setPhone] = useState("");
+  const [dni, setDni] = useState("");
   const [gender, setGender] = useState("");
-  const [date, setDate] = useState("");
 
   const { id } = useParams();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Fullname: " + fullname);
-    console.log("phone: " + phone);
-    console.log("specialization: " + specialization);
-    console.log("gender: " + gender);
-    console.log("date: " + date);
-
-    authApi
+    patientApi
       .patch(`/${id}`, {
         fullname,
-        specialization,
+        dni,
         phone,
         gender,
-        dataOfBirth: date,
       })
       .then(() => {
-        success("Personal Actualizado!");
+        success("Paciente Actualizado!");
       })
       .catch(() => {
-        error("No se Pudo Actualizar el Personal!");
+        error("No se Pudo Actualizar el Paciente!");
       });
   };
 
@@ -78,32 +70,17 @@ function Editar() {
             value={fullname}
             onChange={(e) => setFullname(e.target.value)}
           />
-          <label for="especialidad">Especialidad:</label>
-          <select
-            id="especialidad"
-            name="especialidad"
-            onChange={(e) => setSpecialization(e.target.value)}
-          >
-            <option disabled value="" selected>
-              Especialidad
-            </option>
-            <option value="cirugia">Cirugía</option>
-            <option value="pediatria">Pediatría</option>
-            <option value="ginecologia">Ginecología</option>
-            <option value="obstetricia">Obstetricia</option>
-            <option value="cardiologia">Cardiología</option>
-            <option value="neurologia">Neurología</option>
-            <option value="oftalmologia">Oftalmología</option>
-            <option value="dermatologia">Dermatología</option>
-            <option value="otorrinolaringologia">Otorrinolaringología</option>
-            <option value="ortopedia">Ortopedia</option>
-            <option value="psiquiatria">Psiquiatría</option>
-            <option value="anestesiologia">Anestesiología</option>
-            <option value="radiologia">Radiología</option>
-            <option value="urologia">Urología</option>
-            <option value="oncologia">Oncología</option>
-          </select>
-          <label for="telefono">Teléfono:</label>
+
+          <label for="dni">DNI:</label>
+          <input
+            type="tel"
+            id="dni"
+            name="dni"
+            placeholder="Dni"
+            value={dni}
+            onChange={(e) => setDni(e.target.value)}
+          />
+          <label for="telefono">Telefono:</label>
           <input
             type="tel"
             id="telefono"
@@ -125,15 +102,6 @@ function Editar() {
             <option value="female">Femenino</option>
             <option value="other">Otro</option>
           </select>
-          <label for="cumpleanos">Cumpleaños:</label>
-          <input
-            type="date"
-            id="cumpleanos"
-            name="cumpleanos"
-            placeholder="Cumpleaños"
-            value={date}
-            onChange={(e) => setDate(e.target.value)}
-          />
           <button onClick={(e) => handleSubmit(e)}>Editar</button>
         </form>
       </div>
@@ -142,4 +110,4 @@ function Editar() {
   );
 }
 
-export default Editar;
+export default EditarPatient;

@@ -2,9 +2,19 @@
 import styles from "../modules/CardInfo.module.css";
 //Api
 import { authApi } from "../api/auth.api";
+import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
+import { useState, useEffect } from "react";
 
-function PatientCardInfo({ fullname, gender, phone, dni }) {
+function PatientCardInfo({ fullname, gender, phone, dni, id }) {
+  const [translateGender, setTranslateGender] = useState("");
+
+  useEffect(() => {
+    if (gender == "male") setTranslateGender("hombre");
+    if (gender == "female") setTranslateGender("mujer");
+    if (gender == "other") setTranslateGender("otro");
+  }, []);
+
   const deleteUser = () => {
     authApi
       .delete(`/${id}`)
@@ -63,10 +73,12 @@ function PatientCardInfo({ fullname, gender, phone, dni }) {
         <div className={styles.info}>
           <p>DNI: {dni}</p>
           <p>Telefono: {phone}</p>
-          <p>Genero: {gender}</p>
+          <p>Genero: {translateGender}</p>
         </div>
         <div className={styles.boton}>
-          <button>Editar</button>
+          <Link to={`/Editar-paciente/${id}`} className={styles.item}>
+            Editar
+          </Link>
           <button onClick={() => deleteUser()}>Borrar</button>
         </div>
       </div>

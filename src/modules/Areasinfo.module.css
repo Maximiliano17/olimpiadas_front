@@ -15,8 +15,8 @@
     height: calc(100vh - 5rem);
     display: flex;
     justify-content: space-around;
-    align-items: center;
-    background: white;
+    align-items: flex-start;
+    overflow-x: hidden;
 }
 
 /*Cards*/
@@ -45,6 +45,35 @@
 
 ::-webkit-scrollbar-thumb {
     background: #FF0000;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    gap: 2rem;
+}
+
+.btn_alarm {
+    padding: 15px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    background-color: #ff0000;
+    outline: none;
+    border: none;
+    margin: 1rem;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: .5s ease;
+    border: 1px solid black;
+}
+
+.btn_alarm:hover {
+    transition: .5s ease;
+    background-color: black;
 }
 
 .addpersonal {
@@ -122,19 +151,21 @@
 
 .mostrarcamas {
     width: 70%;
-    height: 100%;
+    max-height: 100%;
     background: white;
     overflow-y: auto;
     display: grid;
     /* grid-template-columns: repeat(3, 300px); */
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     place-items: center;
-    grid-template-rows: 400px 400px 400px 400px;
+    grid-template-rows: repeat(4, auto-fit, minmax(200px, 1fr));
     padding: 20px;
-    grid-gap: 16px;
+    grid-gap: 20px;
     justify-content: center;
     align-items: center;
     overflow-x: hidden;
+    overflow-y: scroll;
+    /* background-color: red; */
 }
 
 /* MODAL */
@@ -145,21 +176,22 @@
     left: 50%;
     transform: translate(-50%, -50%);
     width: 400px;
-    height: fit-content;    
+    height: fit-content;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
     padding: 15px;
-    background: white; 
-    background-color:white;
-    border:solid 1px #ccc;
+    background: white;
+    background-color: white;
+    border: solid 1px #ccc;
     box-shadow: 1px 1px 4px 4px #ccc;
+    color: #ccc;
     border-radius: 10px;
     gap: 1rem;
 }
 
-.barrasuperior{
+.barrasuperior {
     width: 100%;
     height: 10%;
     display: flex;
@@ -168,11 +200,11 @@
     border-bottom: solid 1px #ccc;
 }
 
-.barrasuperior p{
+.barrasuperior p {
     padding-left: 20px;
 }
 
-.botonmodal{
+.botonmodal {
     width: 50px;
     height: 50px;
     display: flex;
@@ -224,11 +256,59 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white; 
+    color: white;
     border-style: none;
-    background: #8B0000;  
+    background: #8B0000;
     border-radius: 100px;
     font-size: 15px;
     text-decoration: none;
     cursor: pointer;
+}
+
+@media(max-width: 1100px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+    }
+
+    .cardtotal {
+        margin-top: 1rem;
+        min-height: 600px;
+        height: fit-content;
+        width: 100%;
+        gap: 2rem;
+    }
+
+    .cardinfoarea {
+        height: 300px;
+        width: 95%;
+    }
+
+    .cardasignar {
+        display: grid;
+        place-items: center;
+    }
+
+    .personal {
+        margin-top: 2rem;
+        display: grid;
+        place-items: center;
+        /* background-color: red; */
+        height: fit-content;
+        overflow: visible;
+    }
+
+    /* aca */
+
+    .mostrarcamas {
+        width: 100%;
+        height: fit-content;
+    }
+
+    .modalContainer {
+        color: white;
+        width: 95%;
+    }
+
 }
