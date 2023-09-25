@@ -3,11 +3,12 @@ import styles from "../modules/Login.module.css";
 import "react-toastify/dist/ReactToastify.css";
 // Assets
 import logoLogin from "../assets/imagenes/logos/logo_login.png";
-// Modules
+// Components
 import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import { authApi } from "../api/auth.api";
-function Register() {
+
+const Register = () => {
   const [username, setUsername] = useState("");
   const [fullname, setFullname] = useState("");
   const [password, setPassword] = useState("");
@@ -167,5 +168,5 @@ function Register() {
       </div>
     </>
   );
-}
+};
 export default Register;

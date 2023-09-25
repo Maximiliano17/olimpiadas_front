@@ -1,7 +1,9 @@
+//Styles
+
+import styles from "../modules/Editar.module.css";
+
 //Componets
 import Header from "./Header";
-//Styles
-import styles from "../modules/Editar.module.css";
 import { useState } from "react";
 import { areaApi } from "../api/area.api";
 import { ToastContainer, toast } from "react-toastify";
@@ -62,7 +64,7 @@ function EditarArea() {
       <Header />
       <div className={styles.container}>
         <form className={styles.formEditar}>
-          <label for="nombre">Nombre:</label>
+          <label htmlFor="nombre">Nombre:</label>
           <input
             type="text"
             id="nombre"
@@ -72,7 +74,7 @@ function EditarArea() {
             onChange={(e) => setName(e.target.value)}
           />
 
-          <label for="beds">Cantidad de camas:</label>
+          <label htmlFor="beds">Cantidad de camas:</label>
           <input
             type="number"
             id="beds"
@@ -81,16 +83,16 @@ function EditarArea() {
             value={cantOfBeds}
             onChange={(e) => setCantOfBeds(e.target.value)}
           />
-          <label for="schedule">Horario:</label>
+          <label htmlFor="schedule">Horario:</label>
           <input
-            type="number"
+            type="text"
             id="schedule"
             name="schedule"
             placeholder="Horario"
             value={schedule}
             onChange={(e) => setSchedule(e.target.value)}
           />
-          <label for="level">Prioridad:</label>
+          <label htmlFor="level">Prioridad:</label>
           <select
             id="level"
             name="level"

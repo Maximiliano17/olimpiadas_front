@@ -4,14 +4,12 @@ import styles from "../modules/Table.module.css";
 
 // Components
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import UserCard from "./UserCard";
 import { patientApi } from "../api/patient.api";
 import PatientCardInfo from "./PatientCardInfo";
 
 function TablePatients() {
   const [patients, setPatients] = useState([]);
-  const [selectedSpecialization, setSelectedSpecialization] = useState("");
   const [actualUser, setActualUser] = useState([]);
   const [filter, setFilter] = useState([]);
   const [search, setSearch] = useState("");
@@ -41,20 +39,7 @@ function TablePatients() {
     setFilter(filteredUsers);
   }, [search, patients]);
 
-  function calcularEdad(fechaNacimiento) {
-    const fechaNacimientoDate = new Date(fechaNacimiento);
-    const fechaActual = new Date();
-
-    const diferenciaMilisegundos = fechaActual - fechaNacimientoDate;
-    const edadMilisegundos = new Date(diferenciaMilisegundos);
-
-    return Math.abs(edadMilisegundos.getUTCFullYear() - 1970);
-  }
-
   const getInfo = (patient) => {
-    console.log(patient);
-    // user.age = calcularEdad(user.dataOfBirth);
-
     setActualUser(patient);
   };
 
@@ -89,7 +74,7 @@ function TablePatients() {
               className={styles.btn}
               id="especialidad"
               name="especialidad"
-              onChange={(e) => setSelectedSpecialization(e.target.value)}
+              // onChange={(e) => setSelectedSpecialization(e.target.value)}
             >
               <option value="" selected>
                 📁

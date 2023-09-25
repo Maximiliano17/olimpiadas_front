@@ -1,7 +1,9 @@
+//Styles
+
+import styles from "../modules/Editar.module.css";
+
 //Componets
 import Header from "./Header";
-//Styles
-import styles from "../modules/Editar.module.css";
 import { useState } from "react";
 import { authApi } from "../api/auth.api";
 import { ToastContainer, toast } from "react-toastify";
@@ -18,11 +20,6 @@ function Editar() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Fullname: " + fullname);
-    console.log("phone: " + phone);
-    console.log("specialization: " + specialization);
-    console.log("gender: " + gender);
-    console.log("date: " + date);
 
     authApi
       .patch(`/${id}`, {
@@ -69,7 +66,7 @@ function Editar() {
       <Header />
       <div className={styles.container}>
         <form className={styles.formEditar}>
-          <label for="nombre_completo">Nombre Completo:</label>
+          <label htmlFor="nombre_completo">Nombre Completo:</label>
           <input
             type="text"
             id="nombre_completo"
@@ -78,7 +75,7 @@ function Editar() {
             value={fullname}
             onChange={(e) => setFullname(e.target.value)}
           />
-          <label for="especialidad">Especialidad:</label>
+          <label htmlFor="especialidad">Especialidad:</label>
           <select
             id="especialidad"
             name="especialidad"
@@ -103,7 +100,7 @@ function Editar() {
             <option value="urologia">Urología</option>
             <option value="oncologia">Oncología</option>
           </select>
-          <label for="telefono">Teléfono:</label>
+          <label htmlFor="telefono">Teléfono:</label>
           <input
             type="tel"
             id="telefono"
@@ -112,7 +109,7 @@ function Editar() {
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
           />
-          <label for="genero">Género:</label>
+          <label htmlFor="genero">Género:</label>
           <select
             id="opciones"
             name="opciones"
@@ -125,7 +122,7 @@ function Editar() {
             <option value="female">Femenino</option>
             <option value="other">Otro</option>
           </select>
-          <label for="cumpleanos">Cumpleaños:</label>
+          <label htmlFor="cumpleanos">Cumpleaños:</label>
           <input
             type="date"
             id="cumpleanos"

@@ -1,7 +1,7 @@
 // Styles
 import styles from "../modules/CardInfo.module.css";
-//Api
-import { authApi } from "../api/auth.api";
+// Components
+import { patientApi } from "../api/patient.api";
 import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import { useState, useEffect } from "react";
@@ -16,7 +16,7 @@ function PatientCardInfo({ fullname, gender, phone, dni, id }) {
   }, []);
 
   const deleteUser = () => {
-    authApi
+    patientApi
       .delete(`/${id}`)
       .then(() => {
         success("usuario eliminado correctamente");

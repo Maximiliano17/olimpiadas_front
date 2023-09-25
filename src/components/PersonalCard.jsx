@@ -1,45 +1,6 @@
 import styles from "../modules/PersonalCard.module.css";
 
-// import { authApi } from "../api/auth.api";
-// import { ToastContainer, toast } from "react-toastify";
-
 function PersonalCard({ fullname, specialization, id, onClick, edit }) {
-  //   const deleteUser = () => {
-  //     authApi
-  //       .delete(`/${id}`)
-  //       .then(() => {
-  //         success("usuario eliminado correctamente");
-  //         window.location.reload();
-  //       })
-  //       .catch((err) => {
-  //         error(err.response.data);
-  //       });
-  //   };
-
-  //   const success = (message) =>
-  //     toast.success(message, {
-  //       position: "top-right",
-  //       autoClose: 5000,
-  //       hideProgressBar: false,
-  //       closeOnClick: true,
-  //       pauseOnHover: true,
-  //       draggable: true,
-  //       progress: undefined,
-  //       theme: "dark",
-  //     });
-
-  //   const error = (message) =>
-  //     toast.warning(message, {
-  //       position: "top-right",
-  //       autoClose: 5000,
-  //       hideProgressBar: false,
-  //       closeOnClick: true,
-  //       pauseOnHover: true,
-  //       draggable: true,
-  //       progress: undefined,
-  //       theme: "dark",
-  //     });
-
   return (
     <article className={styles.personalCard}>
       {edit ? (

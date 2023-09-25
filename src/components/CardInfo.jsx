@@ -1,8 +1,7 @@
 // Styles
 import styles from "../modules/CardInfo.module.css";
-//Api
+// Components
 import { authApi } from "../api/auth.api";
-//React
 import { useState, useEffect } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import { Link } from "react-router-dom";

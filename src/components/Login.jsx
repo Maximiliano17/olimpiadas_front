@@ -3,11 +3,10 @@ import styles from "../modules/Login.module.css";
 import "react-toastify/dist/ReactToastify.css";
 // Assets
 import logoLogin from "../assets/imagenes/logos/logo_login.png";
-// Modules
+// Components
 import { authApi } from "../api/auth.api";
 import { ToastContainer, toast } from "react-toastify";
 import { useState } from "react";
-//React
 import { Link } from "react-router-dom";
 
 function Login() {
@@ -29,6 +28,7 @@ function Login() {
         console.log(res.data.user);
         let user = {
           username: res.data.user.username,
+          role: res.data.user.role,
         };
 
         const userJSON = JSON.stringify(user);

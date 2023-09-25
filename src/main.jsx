@@ -43,7 +43,6 @@ const router = createBrowserRouter([
       </AlarmProvider>
     ),
   },
-  //Rutas Tarjetas
   {
     path: "/Areas",
     element: (

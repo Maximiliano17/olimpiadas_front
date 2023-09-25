@@ -6,8 +6,6 @@ import Header from "../components/Header";
 import SquareArea from "../components/SquareArea";
 //Styles
 import styles from "../modules/Areas.module.css";
-//Imagenes
-// import icono from  "../assets/imagenes/iconos/icon_doctor.png"
 
 function Monitoreo() {
   const socket = io("http://localhost:4000/");
@@ -16,18 +14,6 @@ function Monitoreo() {
   const [search, setSearch] = useState("");
   const [filtered, setFiltered] = useState([]);
   const [filter, setFilter] = useState("");
-
-  const handleAlarm = () => {
-    const id = "6507725d1d729e8fdf2b24f6";
-
-    socket.emit("client:openAlarm", id);
-  };
-
-  const closeAlarm = () => {
-    const id = "6507725d1d729e8fdf2b24f6";
-
-    socket.emit("client:closeAlarm", id);
-  };
 
   const getAreas = () => {
     areaApi
@@ -95,10 +81,6 @@ function Monitoreo() {
               edit={false}
             />
           ))}
-        </section>
-        <section className={styles.buttonarea}>
-          <button onClick={() => handleAlarm()}>Activar Alarma</button>
-          <button onClick={() => closeAlarm()}>Desactivar Alarma</button>
         </section>
       </div>
     </>

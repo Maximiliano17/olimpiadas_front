@@ -1,16 +1,19 @@
-//Styles
+// Styles
+
 import styles from "../modules/Pacientes.module.css";
+
 //Components
+
 import Header from "../components/Header";
 import TablePatients from "../components/TablePatients";
 import { patientApi } from "../api/patient.api";
-//Iconos
-import icono1 from "../assets/imagenes/iconos/pacientes_icon1.png";
-import icono2 from "../assets/imagenes/iconos/pacientes_icon2.png";
-//React
 import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import Modal from "react-modal";
+
+// Assets
+import icono1 from "../assets/imagenes/iconos/pacientes_icon1.png";
+import icono2 from "../assets/imagenes/iconos/pacientes_icon2.png";
 
 const customStyles = {
   content: {
@@ -116,7 +119,6 @@ function Pacientes() {
                 width="30"
                 height="30"
                 fill="red"
-                class="bi bi-x-square-fill"
                 viewBox="0 0 16 16"
               >
                 <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
@@ -144,7 +146,6 @@ function Pacientes() {
                 width="30"
                 height="30"
                 fill="red"
-                class="bi bi-x-square-fill"
                 viewBox="0 0 16 16"
               >
                 <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
@@ -154,7 +155,7 @@ function Pacientes() {
           <section className={styles.modalcontiner}>
             {/*Formulario de registro de pacientes*/}
             <form className={styles.formulario}>
-              <label for="nombre">Nombre:</label>
+              <label htmlFor="nombre">Nombre:</label>
               <input
                 type="text"
                 id="name"
@@ -164,7 +165,7 @@ function Pacientes() {
                 onChange={(e) => setFullname(e.target.value)}
                 required
               />
-              <label for="dni">DNI:</label>
+              <label htmlFor="dni">DNI:</label>
               <input
                 type="text"
                 id="dni"
@@ -174,7 +175,7 @@ function Pacientes() {
                 value={dni}
                 onChange={(e) => setDni(e.target.value)}
               />
-              <label for="telefono">Número de Teléfono:</label>
+              <label htmlFor="telefono">Número de Teléfono:</label>
               <input
                 type="tel"
                 id="telefono"
@@ -184,7 +185,7 @@ function Pacientes() {
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
               />
-              <label for="genero">Sexo:</label>
+              <label htmlFor="genero">Sexo:</label>
               <select
                 id="genero"
                 name="genero"

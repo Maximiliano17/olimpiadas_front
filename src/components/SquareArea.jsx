@@ -10,9 +10,6 @@ function SquareArea({ name, alarm, id, onClick, edit }) {
     }
   };
 
-  
-  
-
   return (
     <article className={`${styles.area} ${alarm ? styles.alarm : ""}`}>
       {edit ? (
