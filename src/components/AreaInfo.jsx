@@ -446,9 +446,10 @@ function AreaInfo() {
             <p>Camas Disponibles: {areaInfo.beds - listOfPatients.length}</p>
             <p>Horario De atencion: {areaInfo.schedule} 24hs</p>
             <p>prioridad: {level}</p>
-            <Link to="/Editar-area/123" className={styles.addboton}>
-              Editar Area
-            </Link>
+            {/* <Link to="/Editar-area/123" className={styles.addboton}> */}
+            {/* Editar Area */}
+            {/* </Link> */}
+            <Link to={`/Editar-area/${id}`} className={styles.addboton} >Editar Area</Link>
           </div>
           <div className={styles.cardasignar}>
             <section className={styles.addpersonal}>

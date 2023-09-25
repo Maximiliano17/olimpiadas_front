@@ -8,7 +8,7 @@ import SquareArea from "../components/SquareArea";
 import styles from "../modules/Areas.module.css";
 
 function Monitoreo() {
-  const socket = io("http://localhost:4000/");
+  const socket = io("https://olimpiadas-informatica-production.up.railway.app/");
 
   const [areas, setAreas] = useState([]);
   const [search, setSearch] = useState("");

@@ -163,6 +163,7 @@ function Table() {
             <UserCard
               key={index}
               fullname={user.fullname}
+              phone={user.phone}
               specialization={user.specialization}
               onClick={() => getInfo(user)}
             />

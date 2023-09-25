@@ -9,7 +9,7 @@ import { ToastContainer, toast } from "react-toastify";
 import SquareArea from "../components/SquareArea";
 
 function Areas() {
-  const socket = io("http://localhost:4000/");
+  const socket = io("https://olimpiadas-informatica-production.up.railway.app/");
   const [areas, setAreas] = useState([]);
   const [filtered, setFiltered] = useState([]);
   const [name, setName] = useState("");

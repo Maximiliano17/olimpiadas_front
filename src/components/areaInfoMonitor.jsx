@@ -14,7 +14,7 @@ import Bed from "./Bed";
 // Modal.setAppElement("#container");
 
 function AreaInfo() {
-  const socket = io("http://localhost:4000/");
+  const socket = io("https://olimpiadas-informatica-production.up.railway.app/");
 
   const handleAlarm = () => {
     socket.emit("client:openAlarm", id);

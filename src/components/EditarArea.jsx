@@ -28,10 +28,10 @@ function EditarArea() {
         level,
       })
       .then(() => {
-        success("Personal Actualizado!");
+        success("Area Actualizada!");
       })
       .catch(() => {
-        error("No se Pudo Actualizar el Personal!");
+        error("No se Pudo Actualizar el Area!");
       });
   };
 

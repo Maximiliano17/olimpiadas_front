@@ -1,6 +1,6 @@
 import styles from "../modules/UserCard.module.css";
 
-function UserCard({ fullname, specialization, onClick }) {
+function UserCard({ fullname, specialization, phone, onClick }) {
   return (
     <div id={styles.container} onClick={onClick}>
       <svg
@@ -13,7 +13,7 @@ function UserCard({ fullname, specialization, onClick }) {
       </svg>
       <p>{fullname}</p>
       <p>{specialization}</p>
-      <p>Area #15 emergencias</p>
+      <p>{phone}</p>
     </div>
   );
 }

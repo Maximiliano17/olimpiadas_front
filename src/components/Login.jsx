@@ -99,9 +99,6 @@ function Login() {
           <button className={styles.btn} onClick={handleSubmit}>
             Login
           </button>
-          <Link to={`/Home`} className={styles.item}>
-            Entrar sin cuenta.
-          </Link>  
         </form>
         <ToastContainer />
       </div>

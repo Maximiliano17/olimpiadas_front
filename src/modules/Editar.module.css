@@ -1,20 +1,22 @@
 /*Styles Por Defecto*/
-*{ 
+* {
     padding: 0px;
     margin: 0px;
-    box-sizing: border-box;  
+    box-sizing: border-box;
 }
+
 /*Styles De Contenedores*/
-.container{
+.container {
     width: 100%;
-    height: calc(100vh - 5rem); 
-    display: flex; 
+    height: calc(100vh - 5rem);
+    display: flex;
     justify-content: space-around;
-    align-items: center;  
+    align-items: center;
     background: linear-gradient(to bottom, #FF0000, #8B0000);
 }
+
 /*Formulario de editar*/
-.formEditar{
+.formEditar {
     width: 350px;
     height: 92%;
     display: flex;
@@ -32,7 +34,7 @@
     padding-left: 10px;
     height: 2.5rem;
     display: flex;
-    justify-content: center; 
+    justify-content: center;
     align-items: center;
     background: white;
     border-radius: 10px;
@@ -40,8 +42,19 @@
     border-bottom: solid 1px #ccc;
     outline: none;
 }
-  
-.formEditar label{
+
+.formEditar select {
+    width: 80%;
+    border-style: none;
+    outline: none;
+    border-bottom: solid 1px #ccc;
+    height: 2.5rem;
+    padding-left: 10px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.formEditar label {
     width: 85%;
     color: #6a5f5f;
     text-align: center;
@@ -50,8 +63,8 @@
     justify-content: center;
     align-items: center;
 }
-  
-.formEditar button{
+
+.formEditar button {
     cursor: pointer;
     width: 70%;
     height: 2rem;

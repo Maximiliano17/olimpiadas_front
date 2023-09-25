@@ -89,7 +89,6 @@ function CardInfo({
           <p>Genero: {translateGender}</p>
           <p>Edad: {age}</p>
           <p>Especialidad: {specialization}</p>
-          <p>Areas: Urgencias</p>
           <p>Telefono: {phone}</p>
         </div>
         <div className={styles.boton}>

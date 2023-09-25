@@ -62,7 +62,7 @@ function Home() {
         </div>
         <div className={styles.botonvolver}>
           <Link to={`/`} className={styles.volverlink}>
-            Dashboard
+            Cerrar Sesion
           </Link>
         </div>
         <div className={styles.burger}>
