@@ -25,7 +25,7 @@ Para abordar los desafíos de tiempo, hemos seleccionado cuidadosamente las sigu
 - **Base de Datos: MongoDB**
 
 ## Video de Demostración
-Se ha proporcionado un [video completo con la alarma](https://lnkd.in/dwVAR84W) para comprender mejor la solución implementada.
+Se ha proporcionado un [video completo con la alarma](https://www.youtube.com/watch?v=nyaAW60Vbw8) para comprender mejor la solución implementada.
 
 ## Uso y Contribuciones 🚀
 Este proyecto es un prototipo en desarrollo. La comunidad puede contribuir para mejorar la eficiencia y efectividad de la solución.
