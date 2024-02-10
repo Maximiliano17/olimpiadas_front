@@ -1,5 +1,7 @@
 # Solución Digital para el Protocolo Médico "Código Azul"
 
+alarma.mp4
+
 ## Descripción
 Este proyecto tiene como objetivo crear una solución digital para el protocolo médico "Código Azul", que activa alarmas requiriendo la presencia de personal médico. La solución, desarrollada en una semana, ofrece acceso mediante autenticación de usuario y contraseña, junto con funcionalidades clave.
 
